@@ -1655,6 +1655,7 @@ pub fn create_random_proof_batch_priority_with_verify<E, C, R, P: ParameterSourc
     info!("Start a batch zksnark creation");
     if NO_CUSTOM() || priority {
         info!("Do NOT use cusomization zksnark routine!!");
+        info!("Bellperson {} is being used!", BELLMAN_VERSION);
         let r_s = (0..circuits.len())
             .map(|_| E::Fr::random(&mut *rng))
             .collect();
